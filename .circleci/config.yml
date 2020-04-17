@@ -27,8 +27,8 @@ jobs:
       - run:
           name: Prepare shell commands
           # shell chmod +x 赋予执行权限
-          command: chmod +x .circleci/deploy.sh
+          command: chmod +x scripts/deploy.sh
       - run:
           name: Deploy
           # shell chmod +x 赋予执行权限
-          command: ./deploy.sh
+          command: ./scripts/deploy.sh
