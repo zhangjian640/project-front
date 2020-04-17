@@ -2,14 +2,14 @@ version: 2.1
 jobs:
   build:
     docker:
-        - image: circleci/node:10 # the primary container, where your job's commands are run
+        - image: circleci/node:1 # the primary container, where your job's commands are run
     branches:
       only:
         - master
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "ea:7c:99:e1:85:b0:1f:bc:59:67:78:40:de:99:6f:11"
+            - "b5:f0:b7:d4:c2:7f:1f:8f:83:97:47:be:12:6f:f0:f6"
       - checkout
       - run:
           name: Install
