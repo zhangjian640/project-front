@@ -11,9 +11,24 @@ jobs:
           fingerprints:
             - "ea:7c:99:e1:85:b0:1f:bc:59:67:78:40:de:99:6f:11"
       - checkout
+      - restore_cache:
+          keys:
+            - dependencies_cache
       - run:
           name: Install
           command: yarn install
+      - save_cache:
+          paths:
+            - node_modules
+          key: dependencies_cache
       - run:
           name: Build
           command: yarn build
+      - run:
+          name: Prepare shell commands
+          # shell chmod +x 赋予执行权限
+          command: chmod +x .circleci/deploy.sh
+      - run:
+          name: Deploy
+          # shell chmod +x 赋予执行权限
+          command: ./deploy.sh
