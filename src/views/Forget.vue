@@ -98,13 +98,13 @@ export default {
       this.code = value
       this.$v.code.$touch()
     },
-    async submit() {
+    async submit () {
       const res = await forget({
         username: this.username,
         code: this.code
       })
       if (res.code === 200) {
-        console.log(res.data)
+        console.log(res.data) // eslint-disable-line
       }
     }
   }
